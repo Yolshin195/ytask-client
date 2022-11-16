@@ -5,6 +5,10 @@ export interface Credential {
   username: string,
   password: string,
   isSave?: boolean
+};
+
+interface AuthenticateResponse {
+  token: string
 }
 
 @Injectable({
@@ -18,13 +22,12 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   authenticate(credential: Credential): void {
-    this.http.post<string>(this.path, {username: credential.username, password: credential.password})
-      .subscribe(token => {
-        this.token = token;
+    this.http.post<AuthenticateResponse>(this.path, {username: credential.username, password: credential.password})
+      .subscribe(auth => {
+        this.token = auth.token;
         this.authenticated = true;
-        console.log(token);
+        console.log(auth);
       });
   }
-
 
 }
