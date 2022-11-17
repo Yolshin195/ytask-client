@@ -24,6 +24,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './component/auth/login/login.component';
+import { httpInterceptorProviders } from './interceptor';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { LoginComponent } from './component/auth/login/login.component';
     MatInputModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
