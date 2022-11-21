@@ -23,14 +23,18 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 import { LoginComponent } from './component/auth/login/login.component';
 import { httpInterceptorProviders } from './interceptor';
+import { TaskBrowseComponent } from './component/task/task-browse/task-browse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskComponent,
-    LoginComponent
+    LoginComponent,
+    TaskBrowseComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,7 @@ import { httpInterceptorProviders } from './interceptor';
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
+    MatProgressBarModule,
     ReactiveFormsModule,
   ],
   providers: [httpInterceptorProviders],

@@ -1,13 +1,20 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit  {
+
+  constructor(public auth: AuthService) {}
+
+  ngOnInit(): void {
+  }
+
   title = 'ytask-client';
   showFiller = false;
 

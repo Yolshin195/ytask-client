@@ -30,6 +30,14 @@ export class AuthService {
       });
   }
 
+  refresh(): void {
+    this.http.get<AuthenticateResponse>(this.path + "refresh")
+    .subscribe(auth => {
+      this.token = auth.token;
+      this.authenticated = true;
+    });
+  }
+
   getAuthorizationToken(): string {
     return "Bearer " + this.token;
   }

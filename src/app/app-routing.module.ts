@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './component/auth/login/login.component';
+import { TaskBrowseComponent } from './component/task/task-browse/task-browse.component';
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent
+    path: "task",
+    component: TaskBrowseComponent
   }
 ];
 

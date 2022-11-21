@@ -9,6 +9,6 @@ export abstract class BaseHttpService<T> {
     }
 
     save(body: T) {
-        return this.http.post(this.url, body);
+        return this.http.post<T>(this.url, body);
     }
 }
